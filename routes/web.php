@@ -17,6 +17,7 @@ Auth::routes();
 Route::get('/home', 'DashboardController@index')->name('home');
 
 
+Route::get('/', 'DashboardController@index')->name('dash');
 Route::get('/dash', 'DashboardController@index')->name('dash');
 Route::post('/logout', 'DashboardController@logout')->name('logout');
 Route::get('/addClass', 'ClassController@addClass')->name('addClass')->middleware('auth');
