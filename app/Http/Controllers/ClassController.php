@@ -11,10 +11,32 @@ class ClassController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function addClass()
     {
         //
-        return view('class.index');
+        return view('class.addClass');
+    }
+
+    /**
+     * Display a listing of the classes.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function viewClasses()
+    {
+        //
+        return view('class.classes');
+    }
+
+    /**
+     * Display a listing of the classes.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function addEventClass()
+    {
+        //
+        return view('class.addEventClass');
     }
 
     /**
@@ -25,6 +47,7 @@ class ClassController extends Controller
     public function create()
     {
         //
+
     }
 
     /**

@@ -6,13 +6,27 @@ use Illuminate\Http\Request;
 
 class DashboardController extends Controller
 {
+
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
+
     {
+
         //
         return view('class.dashboard');
     }
@@ -81,5 +95,12 @@ class DashboardController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function logout()
+    {
+        auth()->logout();
+
+        return redirect('/dash');
     }
 }

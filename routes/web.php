@@ -11,14 +11,16 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'DashboardController@index')->name('home');
 
 
-Route::get('/dash', 'DashboardController@index');
-Route::get('class', 'ClassController@index');
+Route::get('/dash', 'DashboardController@index')->name('dash');
+Route::post('/logout', 'DashboardController@logout')->name('logout');
+Route::get('/addClass', 'ClassController@addClass')->name('addClass')->middleware('auth');
+Route::get('/addEventClass', 'ClassController@addEventClass')->name('addEventClass')->middleware('auth');
+Route::get('/viewClasses', 'ClassController@viewClasses')->name('viewClasses');
+
+

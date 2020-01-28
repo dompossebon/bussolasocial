@@ -9,5 +9,4 @@ conteudo da pagina - DashBoard
 @endsection
 
 @section('js-view')
-
 @endsection

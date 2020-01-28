@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Crud Turmas da Bússola</title>
-
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="viewport"
           content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -19,16 +19,8 @@ crossorigin="anonymous">
 <body>
 @include('templates.header')
 
-@yield('content-view')
+@yield('content')
 
-@yield('js-view')
-
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
 @include('templates.footer')
 </body>
 
