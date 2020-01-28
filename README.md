@@ -37,8 +37,30 @@ cd bussolasocial
 em seguida execute o comandos abaixo:
 
 composer install
-
 Caso aconteça erro de permissão, lembre-se de executar: (sudo chown -R $USER .) dentro do diretorio /bussolasocial
+e então repita o comando (composer install)
+
+Na raiz do projeto localize e Duplique o arquivo .env.example e em seguida renomeie-o para .env usando o comando:
+
+cp .env.example .env
+
+Então rode o comando:
+
+php artisan key:generate
+
+
+e em seguida
+
+php artisan serve
+
+Agora basta
+
+visite http: // localhost: 8000 para ver o aplicativo em ação.
+
+
+
+FALTA DETALHES PARA INSTALAR O BANCO DE DADO E RODAR AS MIGRATES
+
 
 
 
