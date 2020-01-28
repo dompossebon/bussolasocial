@@ -61,7 +61,12 @@ visite http: // localhost: 8000 para ver o aplicativo em ação.
 
 FALTA DETALHES PARA INSTALAR O BANCO DE DADO E RODAR AS MIGRATES
 
+# EXTRAS para Explicar depois
 
+1. sudo chown -R $USER:www-data storage
+2. sudo chown -R $USER:www-data bootstrap/cache
+3. chmod -R 775 storage
+4. chmod -R 775 bootstrap/cache/
 
 
 Continua... Arquivo e Sistema Inacabado...
