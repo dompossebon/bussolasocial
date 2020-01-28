@@ -76,6 +76,14 @@ Continua... Arquivo e Sistema Inacabado...
 
 
 
+## Construído com
+Laravel - O framework PHP para artesãos da Web
+React - uma biblioteca JavaScript para criar interfaces de usuário
+
+## by Possebon 
+## Contato dompossebon@gmail.com
 
 
-:+1: #By Dom Possebon
+:+1: # By Possebon
+
+:+1: ## By Possebon
