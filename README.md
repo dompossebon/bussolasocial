@@ -44,14 +44,25 @@ Na raiz do projeto localize e Duplique o arquivo .env.example e em seguida renom
 
 cp .env.example .env
 
+Altere o Trecho de Código dentro do arquivo .env
+
+DB_DATABASE=dbBussolaSocial
+DB_USERNAME=root
+DB_PASSWORD=@@123456
+
+Para que assim o sistema conecte-se ao seu banco e possa criar as devidas tabelas
+após ter alterado e estiver testado a sua conexão execute o comando para criar as tabelas
+
+- php artisan migrate
+
 Então rode o comando:
 
-php artisan key:generate
+- php artisan key:generate
 
 
 e em seguida
 
-php artisan serve
+- php artisan serve
 
 Agora basta
 
