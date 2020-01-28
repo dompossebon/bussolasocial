@@ -38,7 +38,22 @@ em seguida execute o comandos abaixo:
 
 composer install
 
+Caso aconteça erro de permissão, lembre-se de executar: (sudo chown -R $USER .) dentro do diretorio /bussolasocial
+
+
 
 Continua... Arquivo e Sistema Inacabado...
+
+
+
+
+
+
+
+
+
+
+
+
 
 :+1: #By Dom Possebon
