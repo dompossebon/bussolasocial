@@ -11,5 +11,14 @@
 |
 */
 
-Route::get('/', 'DashboardController@index');
+Route::get('/', function () {
+    return view('welcome');
+});
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+
+Route::get('/dash', 'DashboardController@index');
 Route::get('class', 'ClassController@index');
