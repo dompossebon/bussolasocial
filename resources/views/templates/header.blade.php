@@ -10,7 +10,8 @@
 
         <nav class="nav justify-content-center">
 
-            <a class="p-2 text-dark" href="{{ route('viewClasses') }}">Ver Agenda</a>
+            <a class="p-2 text-dark" href="{{ route('viewGroup') }}">Ver Agenda</a>
+            <a class="p-2 text-dark" href="{{ route('fullcalendar') }}">Teste com Criação de Eventos</a>
 
 
 
@@ -29,9 +30,9 @@
                         @endauth
                     @endif
                 @else
-                <a class="p-2 text-dark" href="{{ route('addClass') }}">Cadastrar Turma</a>
+                <a class="p-2 text-dark" href="{{ route('addGroup') }}">Cadastrar Turma</a>
 
-                <a class="p-2 text-dark" href="{{ route('addEventClass') }}">Agendar sua Turma</a>
+                <a class="p-2 text-dark" href="{{ route('addEventGroup') }}">Agendar sua Turma</a>
 
                         <a class="p-2 text-dark" href="{{ route('logout') }}"
                            onclick="event.preventDefault();

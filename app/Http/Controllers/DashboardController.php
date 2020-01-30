@@ -28,7 +28,7 @@ class DashboardController extends Controller
     {
 
         //
-        return view('class.dashboard');
+        return view('group.dashboard');
     }
 
     /**
@@ -101,6 +101,6 @@ class DashboardController extends Controller
     {
         auth()->logout();
 
-        return redirect('/dash');
+        return redirect('/viewGroup');
     }
 }
