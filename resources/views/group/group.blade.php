@@ -12,7 +12,7 @@
 
                     @forelse ($group as $key => $value)
                         {{ $key }}.
-                        Turma: <b>{{ $value['name'] }}</b>, Responśavel: <b>{{ $value['manager'] }}</b> <p/>
+                        Turma: <b>{{ $value['title'] }}</b>, Responśavel: <b>{{ $value['manager'] }}</b>, Inicio: <b>{{ $value['start'] }}</b>, Final: <b>{{ $value['end'] }}</b> <p/>
                     @empty
                         Não existem Turmas cadastradas!
                         <p/>

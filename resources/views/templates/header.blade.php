@@ -1,7 +1,7 @@
 
     <div class="align-items-center p-3 mb-3 border-bottom shadow-sm">
         <h5>
-            <a href="{{ route('dash') }}">Bússola Social</a>
+            <a href="{{ route('routeEventList') }}">Bússola Social</a>
             @guest
             @else
                 | {{ Auth::user()->name }}
@@ -10,9 +10,7 @@
 
         <nav class="nav justify-content-center">
 
-            <a class="p-2 text-dark" href="{{ route('viewGroup') }}">Ver Agenda</a>
-            <a class="p-2 text-dark" href="{{ route('fullcalendar') }}">Teste com Criação de Eventos</a>
-
+            <a class="p-2 text-dark" href="{{ route('routeEventList') }}">Ver Agendax</a>
 
 
         <!-- Right Side Of Navbar -->
@@ -30,9 +28,8 @@
                         @endauth
                     @endif
                 @else
-                <a class="p-2 text-dark" href="{{ route('addGroup') }}">Cadastrar Turma</a>
+                <a class="p-2 text-dark" href="{{ route('viewcalendar') }}">Criar Turmas | Agendar</a>
 
-                <a class="p-2 text-dark" href="{{ route('addEventGroup') }}">Agendar sua Turma</a>
 
                         <a class="p-2 text-dark" href="{{ route('logout') }}"
                            onclick="event.preventDefault();

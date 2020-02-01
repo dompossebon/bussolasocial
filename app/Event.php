@@ -11,7 +11,7 @@ class Event extends Model
     //
     use SoftDeletes;
 
-    protected $fillable = ['title', 'start', 'end', 'color', 'description'];
+    protected $fillable = ['title', 'start', 'end', 'color', 'description', 'manager'];
 
     public function getStartAttribute($value)
     {

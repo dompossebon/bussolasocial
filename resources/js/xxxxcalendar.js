@@ -9,12 +9,11 @@ document.addEventListener('DOMContentLoaded', function() {
     var containerEl = document.getElementById('external-events-list');
     new Draggable(containerEl, {
         itemSelector: '.fc-event',
-        eventData: function(eventEl) {
-            return {
-                title: eventEl.innerText.trim()
-            }
-        }
     });
+
+
+    /* initialize the calendar
+    -----------------------------------------------------------------*/
 
     var calendarEl = document.getElementById('calendar');
     var calendar = new Calendar(calendarEl, {
@@ -24,43 +23,63 @@ document.addEventListener('DOMContentLoaded', function() {
             center: 'title',
             right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek'
         },
+        navLinks: true,
         locale: 'pt-br',
         navLinks: true,
         eventLimit: true,
-        selectable: true,
+        selectable:true,
         editable: true,
         droppable: true, // this allows things to be dropped onto the calendar
-        drop: function(arg) {
+        drop: function(element) {
+
+            let Event = JSON.parse(element.draggedEl.dataset.event);
+
             // is the "remove after drop" checkbox checked?
             if (document.getElementById('drop-remove').checked) {
                 // if so, remove the element from the "Draggable Events" list
-                arg.draggedEl.parentNode.removeChild(arg.draggedEl);
+                element.draggedEl.parentNode.removeChild(element.draggedEl);
+
+                Event._method = "DELETE";
+                sendEvent(routeEvents('routeFastEventDelete'), Event);
             }
+
+            let start = moment(`${element.dateStr} ${Event.start}`).format("YYYY-MM-DD HH:mm:ss");
+            let end = moment(`${element.dateStr} ${Event.end}`).format("YYYY-MM-DD HH:mm:ss");
+
+            Event.start = start;
+            Event.end = end;
+
+            delete Event.id;
+            delete Event._method;
+
+            sendEvent(routeEvents('routeEventStore'), Event);
+
         },
-
-
-
-        eventDrop: function(element) {
+        eventDrop: function(element){
 
             let start = moment(element.event.start).format("YYYY-MM-DD HH:mm:ss");
             let end = moment(element.event.end).format("YYYY-MM-DD HH:mm:ss");
 
             let newEvent = {
                 _method:'PUT',
+                title: element.event.title,
                 id: element.event.id,
                 start: start,
                 end: end
             };
 
-            sendEvent(routeEvents('routeEventUpdate'), newEvent);
+            sendEvent(routeEvents('routeEventUpdate'),newEvent,calendar);
 
         },
-        eventClick: function(element) {
-            clearMessage('#message');
-            resetForm(formEvent);
+        eventClick: function(element){
+alert('fsdfsdfdd');
 
-            $("#modalCalendar").modal("show");
-            $("#modalCalendar #titleModal").text("Alterar Evento");
+
+            clearMessage('.message');
+            resetForm("#formEvent");
+
+            $("#modalCalendar").modal('show');
+            $("#modalCalendar #titleModal").text('Alterar Agenda da Turma');
             $("#modalCalendar button.deleteEvent").css("display","flex");
 
             let id = element.event.id;
@@ -82,30 +101,29 @@ document.addEventListener('DOMContentLoaded', function() {
             $("#modalCalendar textarea[name='description']").val(description);
 
 
-
         },
-        eventResize: function(element) {
-
+        eventResize: function(element){
             let start = moment(element.event.start).format("YYYY-MM-DD HH:mm:ss");
             let end = moment(element.event.end).format("YYYY-MM-DD HH:mm:ss");
 
             let newEvent = {
                 _method:'PUT',
+                title: element.event.title,
                 id: element.event.id,
                 start: start,
                 end: end
             };
 
-            sendEvent(routeEvents('routeEventUpdate'), newEvent);
-
+            sendEvent(routeEvents('routeEventUpdate'),newEvent);
         },
-        select: function(element) {
+        select: function(element){
 
-            clearMessage('#message');
-            resetForm(formEvent);
+            clearMessage('.message');
+            resetForm("#formEvent");
+            $("#modalCalendar input[name='id']").val('');
 
-            $("#modalCalendar").modal("show");
-            $("#modalCalendar #titleModal").text("Adicionar Evento");
+            $("#modalCalendar").modal('show');
+            $("#modalCalendar #titleModal").text('Criar Turma / Agendar');
             $("#modalCalendar button.deleteEvent").css("display","none");
 
             let start = moment(element.start).format("DD/MM/YYYY HH:mm:ss");
@@ -119,9 +137,13 @@ document.addEventListener('DOMContentLoaded', function() {
             calendar.unselect();
 
         },
+        // eventReceive: function(element){
+        //     element.event.remove();
+        // },
         events: routeEvents('routeLoadEvents'),
+
     });
+    // objCalendar = calendar;
     calendar.render();
 
 });
-
