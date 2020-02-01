@@ -9,9 +9,9 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Event extends Model
 {
     //
-    use SoftDeletes;
+//    use SoftDeletes;
 
-    protected $fillable = ['title', 'start', 'end', 'color', 'description', 'manager'];
+    protected $fillable = ['fast_events_id', 'title', 'start', 'end', 'color', 'description', 'manager'];
 
     public function getStartAttribute($value)
     {

@@ -13,8 +13,9 @@ class DatabaseSeeder extends Seeder
     {
         // $this->call(UsersTableSeeder::class);
          $this->call([
-             EventTableSeeder::class,
+             UserTableSeeder::class,
              FastEventTableSeeder::class,
+             EventTableSeeder::class,
          ]);
     }
 }

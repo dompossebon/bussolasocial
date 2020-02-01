@@ -10,7 +10,7 @@
 
         <nav class="nav justify-content-center">
 
-            <a class="p-2 text-dark" href="{{ route('routeEventList') }}">Ver Agendax</a>
+            <a class="p-2 text-dark" href="{{ route('routeEventList') }}">Ver Turmas Agendadas</a>
 
 
         <!-- Right Side Of Navbar -->

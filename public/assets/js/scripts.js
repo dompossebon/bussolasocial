@@ -28,7 +28,6 @@ $(function () {
         clearMessage('.message');
         resetForm("#formFastEvent");
 
-        showModalUpdateFastEvent = true;
 
         let Event = JSON.parse($(this).attr('data-event'));
 
@@ -160,7 +159,7 @@ function sendEvent(route, data_){
             if(json === true){
                 location.reload();
             }else{
-                location.reload();
+                // location.reload();
                 let responseJSON = json;
                 $(".message").html(loadErrors(responseJSON));
             }

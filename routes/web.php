@@ -14,15 +14,9 @@
 
 Auth::routes();
 
+Route::get('/', 'EventController@listEvents');
 Route::get('/home', 'EventController@listEvents')->name('home');
-//Route::get('/', 'GroupController@index')->name('dash');
-//Route::get('/dash', 'EventController@listEvents')->name('dash');
 Route::post('/logout', 'EventController@logout')->name('logout');
-
-//Route::get('/addGroup', 'GroupController@addGroup')->name('addGroup')->middleware('auth');
-//Route::get('/addEventGroup', 'GroupController@addEventGroup')->name('addEventGroup')->middleware('auth');
-//Route::post('/store', 'GroupController@store')->name('store');
-
 
 Route::get('/viewcalendar', 'FastEventController@viewcalendar')->name('viewcalendar')->middleware('auth');
 Route::get('/load-events',  'EventController@loadEvents')->name('routeLoadEvents');

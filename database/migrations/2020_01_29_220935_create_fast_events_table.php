@@ -14,7 +14,7 @@ class CreateFastEventsTable extends Migration
     public function up()
     {
         Schema::create('fast_events', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->increments('id');
             $table->string('title');
             $table->time('start');
             $table->time('end');
@@ -22,6 +22,7 @@ class CreateFastEventsTable extends Migration
 
             $table->timestamps();
             $table->softDeletes();
+            $table->engine = 'InnoDB';
         });
     }
 

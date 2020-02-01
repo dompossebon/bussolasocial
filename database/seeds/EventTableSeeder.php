@@ -15,28 +15,31 @@ class EventTableSeeder extends Seeder
         //
         DB::table('events')->insert([
             [
-                'title' => 'Reunião',
-                'start' => '2020-01-12 21:30:00',
-                'end' => '2020-01-13 21:30:00',
+                'fast_events_id' => 1,
+                'title' => 'Abelhinha',
+                'start' => '2020-02-12 21:30:00',
+                'end' => '2020-02-13 21:30:00',
                 'color' => '#c40233',
-                'description' => 'Reuniao com clientes',
-                'manager' => 'Prof Rita'
+                'description' => 'Aula de Natação',
+                'manager' => 'Possebon'
             ],
             [
-                'title' => 'Ligar para Cliente',
-                'start' => '2020-01-02',
-                'end' => '2020-01-03',
+                'fast_events_id' => 1,
+                'title' => 'Abelhinha',
+                'start' => '2020-02-02',
+                'end' => '2020-02-03',
                 'color' => '#d8002b',
-                'description' => 'Falar com Cliente',
-                'manager' => 'Prof. xande'
+                'description' => 'Falar com Alunos',
+                'manager' => 'Possebon'
             ],
             [
-                'title' => 'encontro com fatima',
-                'start' => '2020-01-15 10:30:00',
-                'end' => '2020-01-16 11:30:00',
+                'fast_events_id' => 3,
+                'title' => 'As Branquelas',
+                'start' => '2020-02-15 10:30:00',
+                'end' => '2020-02-16 11:30:00',
                 'color' => '#03ffea',
-                'description' => 'comprar aparelhos',
-                'manager' => 'Prof. Zeca'
+                'description' => 'comprar livros',
+                'manager' => 'Tatiana'
             ],
 
         ]);

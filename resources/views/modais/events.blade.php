@@ -14,9 +14,9 @@
 
                 <form id="formEvent">
                     <div class="form-group row">
-                        <label for="title" class="col-sm-4 col-form-label">Titulo</label>
+                        <label for="title" class="col-sm-4 col-form-label classlabeltitle">Titulo</label>
                         <div class="col-sm-8">
-                            <input type="text" name="title" class="form-control" id="title">
+                            <input type="text" name="title" class="form-control classtitle" id="title">
                             <input type="hidden" name="id">
                         </div>
                     </div>
@@ -33,9 +33,9 @@
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="color" class="col-sm-4 col-form-label">Cor do Evento</label>
+                        <label for="color" class="col-sm-4 col-form-label classlabelcolor">Cor do Evento</label>
                         <div class="col-sm-8">
-                            <input type="color" name="color" class="form-control" id="color">
+                            <input type="color" name="color" class="form-control classcolor" id="color">
                         </div>
                     </div>
                     <div class="form-group row">

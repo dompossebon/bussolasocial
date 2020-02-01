@@ -35,21 +35,25 @@ document.addEventListener('DOMContentLoaded', function() {
             let Event = JSON.parse(element.draggedEl.dataset.event);
 
             // is the "remove after drop" checkbox checked?
-            if (document.getElementById('drop-remove').checked) {
-                // if so, remove the element from the "Draggable Events" list
-                element.draggedEl.parentNode.removeChild(element.draggedEl);
-
-                Event._method = "DELETE";
-                sendEvent(routeEvents('routeFastEventDelete'), Event);
-            }
+            // if (document.getElementById('drop-remove').checked) {
+            //     // if so, remove the element from the "Draggable Events" list
+            //     element.draggedEl.parentNode.removeChild(element.draggedEl);
+            //
+            //     Event._method = "DELETE";
+            //     sendEvent(routeEvents('routeFastEventDelete'), Event);
+            // }
 
             let start = moment(`${element.dateStr} ${Event.start}`).format("YYYY-MM-DD HH:mm:ss");
             let end = moment(`${element.dateStr} ${Event.end}`).format("YYYY-MM-DD HH:mm:ss");
 
+            let fast_events_id = Event.id;
+
+            console.log(fast_events_id);
+
+            Event.fast_events_id = fast_events_id;
             Event.start = start;
             Event.end = end;
 
-            delete Event.id;
             delete Event._method;
 
             sendEvent(routeEvents('routeEventStore'), Event);
@@ -78,6 +82,10 @@ document.addEventListener('DOMContentLoaded', function() {
             $("#modalCalendar").modal('show');
             $("#modalCalendar #titleModal").text('Alterar Evento');
             $("#modalCalendar button.deleteEvent").css("display","flex");
+            $("#modalCalendar label.classlabeltitle").css("display","none");
+            $("#modalCalendar input.classtitle").css("display","none");;
+            $("#modalCalendar label.classlabelcolor").css("display","none");
+            $("#modalCalendar input.classcolor").css("display","none");
 
             let id = element.event.id;
             $("#modalCalendar input[name='id']").val(id);
@@ -113,27 +121,27 @@ document.addEventListener('DOMContentLoaded', function() {
 
             sendEvent(routeEvents('routeEventUpdate'),newEvent);
         },
-        select: function(element){
-
-            clearMessage('.message');
-            resetForm("#formEvent");
-            $("#modalCalendar input[name='id']").val('');
-
-            $("#modalCalendar").modal('show');
-            $("#modalCalendar #titleModal").text('Adicionar Evento');
-            $("#modalCalendar button.deleteEvent").css("display","none");
-
-            let start = moment(element.start).format("DD/MM/YYYY HH:mm:ss");
-            $("#modalCalendar input[name='start']").val(start);
-
-            let end = moment(element.end).format("DD/MM/YYYY HH:mm:ss");
-            $("#modalCalendar input[name='end']").val(end);
-
-            $("#modalCalendar input[name='color']").val("#3788D8");
-
-            calendar.unselect();
-
-        },
+        // select: function(element){
+        //
+        //     clearMessage('.message');
+        //     resetForm("#formEvent");
+        //     $("#modalCalendar input[name='id']").val('');
+        //
+        //     $("#modalCalendar").modal('show');
+        //     $("#modalCalendar #titleModal").text('Adicionar Evento');
+        //     $("#modalCalendar button.deleteEvent").css("display","none");
+        //
+        //     let start = moment(element.start).format("DD/MM/YYYY HH:mm:ss");
+        //     $("#modalCalendar input[name='start']").val(start);
+        //
+        //     let end = moment(element.end).format("DD/MM/YYYY HH:mm:ss");
+        //     $("#modalCalendar input[name='end']").val(end);
+        //
+        //     $("#modalCalendar input[name='color']").val("#3788D8");
+        //
+        //     calendar.unselect();
+        //
+        // },
         // eventReceive: function(element){
         //     element.event.remove();
         // },

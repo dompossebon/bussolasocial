@@ -9,10 +9,12 @@
                     <div class="card-header">Visualiza Turma Existente</div>
                     <br/>
                     <p/>
+                    @forelse ($group as $value)
 
-                    @forelse ($group as $key => $value)
-                        {{ $key }}.
-                        Turma: <b>{{ $value['title'] }}</b>, Responśavel: <b>{{ $value['manager'] }}</b>, Inicio: <b>{{ $value['start'] }}</b>, Final: <b>{{ $value['end'] }}</b> <p/>
+                        Turma: <b>{{ $value[0]['title'] }}</b>,
+                        Responśavel: <b>{{ $value[0]['manager'] }}</b>,
+                        Inicio: <b>{{ $value[0]['start'] }}</b>,
+                        Final: <b>{{ $value[0]['end'] }}</b> <p/>
                     @empty
                         Não existem Turmas cadastradas!
                         <p/>

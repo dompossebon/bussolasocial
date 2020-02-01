@@ -13,11 +13,8 @@
     <link href='{{asset('assets/packages/timegrid/main.css')}}' rel='stylesheet' />
     <link href='{{asset('assets/packages/list/main.css')}}' rel='stylesheet' />
 
-    <link rel="stylesheet"
-href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-
+    <link href='{{asset('assets/css/bootstrap.min.css')}}' rel='stylesheet' />
     <link href='{{asset('assets/css/style.css')}}' rel='stylesheet' />
-
 
     <meta name="theme-color" content="blue">
     @yield('css-view')

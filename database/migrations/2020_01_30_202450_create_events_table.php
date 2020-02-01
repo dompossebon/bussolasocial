@@ -14,7 +14,8 @@ class CreateEventsTable extends Migration
     public function up()
     {
         Schema::create('events', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->increments('id');
+            $table->integer('fast_events_id')->unsigned();
             $table->string('title');
             $table->dateTime('start');
             $table->dateTime('end');
@@ -23,6 +24,11 @@ class CreateEventsTable extends Migration
             $table->string('manager', 100);
             $table->timestamps();
             $table->softDeletes();
+            $table->engine = 'InnoDB';
+            $table->foreign('fast_events_id')
+                ->references('id')
+                ->on('fast_events')
+                ->onDelete('cascade');
         });
     }
 

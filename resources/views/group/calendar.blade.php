@@ -26,10 +26,10 @@
             </div>
 
             <p>
-                <input type='checkbox' id='drop-remove'/>
-                <label for='drop-remove'>remover após arrastar</label>
-                <button class="btn btn-sm btn-success" id="newFastEvent" style="font-size: 1em; width: 100%;">Criar novo
-                    evento
+                {{--                <input type='checkbox' id='drop-remove'/>--}}
+                {{--                <label for='drop-remove'>remover após arrastar</label>--}}
+                <button class="btn btn-sm btn-success" id="newFastEvent" style="font-size: 1em; width: 100%;">
+                   *#*CRIAR TURMA*#*
                 </button>
             </p>
         </div>
@@ -46,6 +46,7 @@
             data-route-fast-event-update="{{ route('routeFastEventUpdate') }}"
             data-route-fast-event-store="{{ route('routeFastEventStore') }}">
         </div>
+
     </div>
 
 
@@ -67,4 +68,5 @@
 
     <script src="{{asset('assets/js/scripts.js')}}" type="text/javascript" ></script>
     <script src="{{asset('assets/js/calendar.js')}}" type="text/javascript" ></script>
+
 @endsection

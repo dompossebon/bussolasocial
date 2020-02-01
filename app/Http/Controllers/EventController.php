@@ -13,7 +13,7 @@ class EventController extends Controller
     public function listEvents()
     {
         //
-        $group = Event::all();
+        $group = Event::all()->groupBy('title');
 
 //        return $group;
         return view('group.group')->with('group', $group);
@@ -66,6 +66,7 @@ class EventController extends Controller
         }
 
         $data = new Event;
+        $data->fast_events_id = $request->input('fast_events_id');
         $data->title = $request->input('title');
         $data->start = $request->input('start');
         $data->end = $request->input('end');
