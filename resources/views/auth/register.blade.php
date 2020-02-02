@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Primeiro Acesso') }}</div>
+                <div class="card-header">{{ __('Primeiro Acesso - Área Para o Administrador Cadastrar o Responsavel pelas Turmas') }}</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}">

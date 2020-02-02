@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateFastEventsTable extends Migration
+class CreatePessoasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,18 +13,13 @@ class CreateFastEventsTable extends Migration
      */
     public function up()
     {
-        Schema::create('fast_events', function (Blueprint $table) {
+        Schema::create('pessoas', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('title');
-            $table->time('start');
-            $table->time('end');
-            $table->string('color', 7);
-
+            $table->string('nome');
             $table->timestamps();
-            $table->softDeletes();
             $table->engine = 'InnoDB';
-            $table->charset = 'utf8';
-            $table->collation = 'utf8_general_ci';
+//            $table->charset = 'utf8';
+//            $table->collation = 'utf8_general_ci';
         });
     }
 
@@ -35,6 +30,6 @@ class CreateFastEventsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('fast_events');
+        Schema::dropIfExists('pessoas');
     }
 }

@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Event;
+use App\FastEvent;
 use App\Http\Requests\EventRequest;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -13,16 +15,65 @@ class EventController extends Controller
     public function listEvents()
     {
         //
-        $group = Event::all()->groupBy('title');
+
+
+
+
+
+
+
+        $group = FastEvent::with('Event')->get();
+        foreach ($group as $value) {
+            $dataStart = '9999-99-99';
+            $dataEnd = '1000-00-01';
+
+
+
+            foreach ($value->Event as $agenda) {
+
+
+                $dataStartTurma = substr($agenda->start, 0, 10);
+                $dataendTurma = substr($agenda->end, 0, 10);
+
+
+                if ($dataStart > $dataStartTurma) {
+                    $dataStart = $dataStartTurma;
+                }
+                if ($dataEnd < $dataendTurma) {
+                    $dataEnd = $dataendTurma;
+                }
+                if (isset($agenda->manager)) {
+                    $manager = $agenda->manager;
+                }
+
+            }
+
+            if($dataStart != "9999-99-99"){
+                $viewTurmas[] = array(
+                    "name" => $value->title,
+                    "dataStart" => $dataStart,
+                    "dataEnd" => $dataEnd,
+                    "manager" => $manager,
+                    "status" => 'Aberto ou fechado',
+                );
+            }
+
+
+
+        }
+
+//       return  $viewTurmas;
+
+
 
 //        return $group;
-        return view('group.group')->with('group', $group);
+        return view('group.group', ['viewTurmas'=> $viewTurmas]);
     }
 
     public function loadEvents(Request $request)
     {
         //
-        $returnedColumns = ['id', 'title', 'start', 'end', 'color', 'description'];
+        $returnedColumns = ['id', 'title', 'start', 'end', 'color', 'description', 'status'];
 
         $start = (!empty($request->start)) ? ($request->start) : ('');
         $end = (!empty($request->end)) ? ($request->end) : ('');
@@ -112,7 +163,6 @@ class EventController extends Controller
         }
 
         $event = Event::where('id', $request->id)->first();
-
         $event->fill($request->all());
 
         $event->save();

@@ -23,7 +23,7 @@ $(function () {
 
     })
 
-    $(".fc-event").click(function () {
+    $(".novaEvent").click(function () {
 
         clearMessage('.message');
         resetForm("#formFastEvent");
@@ -120,6 +120,8 @@ $(function () {
 
         let color = $("#modalCalendar input[name='color']").val();
 
+        let status = $("#modalCalendar select[name='status']").val();
+
         let description = $("#modalCalendar textarea[name='description']").val();
 
         let Event = {
@@ -128,6 +130,7 @@ $(function () {
             end: end,
             color: color,
             description: description,
+            status: status,
         };
 
         let route;
@@ -159,7 +162,7 @@ function sendEvent(route, data_){
             if(json === true){
                 location.reload();
             }else{
-                // location.reload();
+                location.reload();
                 let responseJSON = json;
                 $(".message").html(loadErrors(responseJSON));
             }

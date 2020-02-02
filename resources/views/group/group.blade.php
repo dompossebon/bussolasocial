@@ -9,12 +9,23 @@
                     <div class="card-header">Visualiza Turma Existente</div>
                     <br/>
                     <p/>
-                    @forelse ($group as $value)
 
-                        Turma: <b>{{ $value[0]['title'] }}</b>,
-                        Responśavel: <b>{{ $value[0]['manager'] }}</b>,
-                        Inicio: <b>{{ $value[0]['start'] }}</b>,
-                        Final: <b>{{ $value[0]['end'] }}</b> <p/>
+                    @forelse ($viewTurmas as $viewTurma)
+
+                        Turma: <b>{{ $viewTurma['name'] }}  </b>  -
+                        Inicio: <b>{{ $viewTurma['dataStart'] }}  </b>  -
+                        Fim: <b>{{ $viewTurma['dataEnd'] }}  </b>  -
+                        Responsavel: <b>{{ $viewTurma['manager'] }}  </b> 
+
+
+
+
+
+
+                        <p/>
+                        {{--                        Responśavel: <b>{{ $value[0]['manager'] }}</b>,--}}
+{{--                        Inicio: <b>{{ $value[0]['start'] }}</b>,--}}
+{{--                        Final: <b>{{ $value[0]['end'] }}</b> --}}
                     @empty
                         Não existem Turmas cadastradas!
                         <p/>

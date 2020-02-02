@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             let fast_events_id = Event.id;
 
-            console.log(fast_events_id);
+
 
             Event.fast_events_id = fast_events_id;
             Event.start = start;
@@ -80,7 +80,7 @@ document.addEventListener('DOMContentLoaded', function() {
             resetForm("#formEvent");
 
             $("#modalCalendar").modal('show');
-            $("#modalCalendar #titleModal").text('Alterar Evento');
+            $("#modalCalendar #titleModal").text('Alterar Agenda/Status Turma');
             $("#modalCalendar button.deleteEvent").css("display","flex");
             $("#modalCalendar label.classlabeltitle").css("display","none");
             $("#modalCalendar input.classtitle").css("display","none");;
@@ -105,6 +105,8 @@ document.addEventListener('DOMContentLoaded', function() {
             let description = element.event.extendedProps.description;
             $("#modalCalendar textarea[name='description']").val(description);
 
+            let status = element.event.extendedProps.status;
+            $("#modalCalendar select[name='status']").val(status);
 
         },
         eventResize: function(element){

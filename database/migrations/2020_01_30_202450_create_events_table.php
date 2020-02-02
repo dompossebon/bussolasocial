@@ -21,10 +21,13 @@ class CreateEventsTable extends Migration
             $table->dateTime('end');
             $table->String('color', 7);
             $table->longText('description')->nullable();
+            $table->string('status')->default('0');
             $table->string('manager', 100);
             $table->timestamps();
             $table->softDeletes();
             $table->engine = 'InnoDB';
+            $table->charset = 'utf8';
+            $table->collation = 'utf8_general_ci';
             $table->foreign('fast_events_id')
                 ->references('id')
                 ->on('fast_events')

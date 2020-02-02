@@ -11,7 +11,7 @@ class Event extends Model
     //
 //    use SoftDeletes;
 
-    protected $fillable = ['fast_events_id', 'title', 'start', 'end', 'color', 'description', 'manager'];
+    protected $fillable = ['fast_events_id', 'title', 'start', 'end', 'color', 'status', 'manager'];
 
     public function getStartAttribute($value)
     {
@@ -26,5 +26,10 @@ class Event extends Model
         $timeEnd = Carbon::createFromFormat('Y-m-d H:i:s', $value)->format('H:i:s');
 
         return $this->end = ($timeEnd == '00:00:00' ? $dateEnd : $value);
+    }
+
+    public function  fastevent()
+    {
+        return $this->belongsTo(FastEvent::class, 'fast_events_id');
     }
 }

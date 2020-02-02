@@ -2,25 +2,31 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6826a33b-14df-45e2-a909-dc810cf01ddd" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/assets/css/bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/findex.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Event.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Event.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/FastEvent.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/FastEvent.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Group.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/-deletar-DashboardController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/-deletar-GroupController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/-deletar-HomeController.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/EventController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/EventController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/FastEventController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/FastEventController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_01_29_220935_create_events_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_01_30_202450_create_fast_events_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_01_29_220935_create_fast_events_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_01_29_220935_create_fast_events_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_01_30_202450_create_events_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_01_30_202450_create_events_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/seeds/EventTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/EventTableSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/FastEventTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/FastEventTableSeeder.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/assets/js/calendar.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/calendar.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/assets/js/scripts.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/scripts.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/register.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/group/-deletar-addEventGroup.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/group/-deletar-addGroup.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/group/-deletar-dashboard.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/group/-deletar-master.blade.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/group/calendar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/group/calendar.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/group/group.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/group/group.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/modais/events.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/modais/events.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/templates/footer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/templates/footer.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/templates/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/templates/header.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/templates/master.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/templates/master.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -187,7 +193,10 @@
       <workItem from="1580415514554" duration="22760000" />
       <workItem from="1580493977458" duration="882000" />
       <workItem from="1580495475655" duration="20747000" />
-      <workItem from="1580517161299" duration="19421000" />
+      <workItem from="1580517161299" duration="19485000" />
+      <workItem from="1580562164105" duration="16408000" />
+      <workItem from="1580584529937" duration="9894000" />
+      <workItem from="1580597102941" duration="10155000" />
     </task>
     <servers />
   </component>
@@ -195,10 +204,10 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="197" y="188" width="620" height="390" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1580332897787">
+    <state x="197" y="188" width="620" height="390" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1580587366811">
       <screen x="0" y="27" width="1024" height="741" />
     </state>
-    <state x="197" y="188" width="620" height="390" key="#com.intellij.fileTypes.FileTypeChooser/1024.0.1366.768/0.27.1024.741@0.27.1024.741" timestamp="1580332897787" />
+    <state x="197" y="188" width="620" height="390" key="#com.intellij.fileTypes.FileTypeChooser/1024.0.1366.768/0.27.1024.741@0.27.1024.741" timestamp="1580587366811" />
     <state x="245" y="132" width="524" height="502" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1580327666819">
       <screen x="0" y="27" width="1024" height="741" />
     </state>
@@ -211,14 +220,22 @@
       <screen x="0" y="27" width="1024" height="741" />
     </state>
     <state x="295" y="141" width="424" height="484" key="FileChooserDialogImpl/1024.0.1366.768/0.27.1024.741@0.27.1024.741" timestamp="1580439103490" />
-    <state x="279" y="243" key="com.intellij.ide.util.TipDialog" timestamp="1580517161204">
+    <state x="279" y="243" key="com.intellij.ide.util.TipDialog" timestamp="1580597109079">
       <screen x="0" y="27" width="1024" height="741" />
     </state>
-    <state x="279" y="243" key="com.intellij.ide.util.TipDialog/1024.0.1366.768/0.27.1024.741@0.27.1024.741" timestamp="1580517161204" />
+    <state x="279" y="243" key="com.intellij.ide.util.TipDialog/1024.0.1366.768/0.27.1024.741@0.27.1024.741" timestamp="1580597109079" />
     <state x="1396" y="224" key="com.intellij.ide.util.TipDialog/1024.0.1366.768/0.27.1024.741@1024.0.1366.768" timestamp="1580177785820" />
     <state x="0" y="27" width="868" height="741" key="find.popup" timestamp="1580333264185">
       <screen x="0" y="27" width="1024" height="741" />
     </state>
     <state x="0" y="27" width="868" height="741" key="find.popup/1024.0.1366.768/0.27.1024.741@0.27.1024.741" timestamp="1580333264185" />
+    <state x="176" y="168" key="run.anything.popup" timestamp="1580590856854">
+      <screen x="0" y="27" width="1024" height="741" />
+    </state>
+    <state x="176" y="168" key="run.anything.popup/1024.0.1366.768/0.27.1024.741@0.27.1024.741" timestamp="1580590856854" />
+    <state x="175" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1580587226340">
+      <screen x="0" y="27" width="1024" height="741" />
+    </state>
+    <state x="175" y="89" width="672" height="678" key="search.everywhere.popup/1024.0.1366.768/0.27.1024.741@0.27.1024.741" timestamp="1580587226340" />
   </component>
 </project>

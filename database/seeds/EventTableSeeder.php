@@ -21,6 +21,7 @@ class EventTableSeeder extends Seeder
                 'end' => '2020-02-13 21:30:00',
                 'color' => '#c40233',
                 'description' => 'Aula de Natação',
+                'status' => '0',
                 'manager' => 'Possebon'
             ],
             [
@@ -30,6 +31,7 @@ class EventTableSeeder extends Seeder
                 'end' => '2020-02-03',
                 'color' => '#d8002b',
                 'description' => 'Falar com Alunos',
+                'status' => '0',
                 'manager' => 'Possebon'
             ],
             [
@@ -39,6 +41,7 @@ class EventTableSeeder extends Seeder
                 'end' => '2020-02-16 11:30:00',
                 'color' => '#03ffea',
                 'description' => 'comprar livros',
+                'status' => '0',
                 'manager' => 'Tatiana'
             ],
 

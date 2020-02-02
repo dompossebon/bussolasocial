@@ -44,6 +44,20 @@
                             <textarea name="description" id="description" cols="35" rows="4"></textarea>
                         </div>
                     </div>
+
+                    <div class="form-group row">
+                        <label for="status" class="col-sm-4 col-form-label">Status/Aula</label>
+                        <div class="col-sm-8">
+                            <select name='status' id='status'
+                                className='form-control'>
+                                <option value="0"> Escolha uma Opção</option>
+                                <option value="1"> Realizada</option>
+                                <option value="2"> Cancelada</option>
+                            </select>
+
+                        </div>
+                    </div>
+
                 </form>
             </div>
             <div class="modal-footer">
