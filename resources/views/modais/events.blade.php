@@ -16,7 +16,7 @@
                     <div class="form-group row">
                         <label for="title" class="col-sm-4 col-form-label classlabeltitle">Titulo</label>
                         <div class="col-sm-8">
-                            <input type="text" name="title" class="form-control classtitle" id="title">
+                            <input type="text" name="title" readonly class="form-control classtitle" id="title">
                             <input type="hidden" name="id">
                         </div>
                     </div>
@@ -50,7 +50,7 @@
                         <div class="col-sm-8">
                             <select name='status' id='status'
                                 className='form-control'>
-                                <option value="0"> Escolha uma Opção</option>
+                                <option value="0"> Agendada - Alterar Status</option>
                                 <option value="1"> Realizada</option>
                                 <option value="2"> Cancelada</option>
                             </select>

@@ -12,62 +12,152 @@ use Illuminate\Support\Facades\Auth;
 class EventController extends Controller
 {
 
-    public function listEvents()
+    public function viewRegistrationForm(Request $request)
     {
         //
+        $detailsAll = FastEvent::with('Event')
+            ->where('id', $request->id)
+            ->orderBy('start')
+            ->get();
+        $somaDiffInMinExpected = 0;
+        $somaDiffInMinFulfilled = 0;
+        foreach ($detailsAll as $details) {
+            unset($fullDetails);
+            foreach ($details->Event as $detailsOne) {
 
 
 
+                $hoursStart = new Carbon($detailsOne->start);
+                $hoursEnd = new Carbon($detailsOne->end);
 
+                $diffInMinExpected = $hoursEnd->diffInMinutes($hoursStart);
 
-
-
-        $group = FastEvent::with('Event')->get();
-        foreach ($group as $value) {
-            $dataStart = '9999-99-99';
-            $dataEnd = '1000-00-01';
-
-
-
-            foreach ($value->Event as $agenda) {
-
-
-                $dataStartTurma = substr($agenda->start, 0, 10);
-                $dataendTurma = substr($agenda->end, 0, 10);
-
-
-                if ($dataStart > $dataStartTurma) {
-                    $dataStart = $dataStartTurma;
+                if($detailsOne->status != 2){
+                    $somaDiffInMinExpected += $diffInMinExpected;
                 }
-                if ($dataEnd < $dataendTurma) {
-                    $dataEnd = $dataendTurma;
+
+                if($detailsOne->status == 2){
+                    $somaDiffInMinFulfilled += $diffInMinExpected;
                 }
-                if (isset($agenda->manager)) {
-                    $manager = $agenda->manager;
+
+                switch ($detailsOne->status) {
+                    case 0:
+                        $status = "Agendada";
+                        break;
+                    case 1:
+                        $status = "Realizada";
+                        break;
+                    case 2:
+                        $status = "Cancelada";
+                        break;
                 }
+                $turma[] = array(
+                    'start' => $detailsOne->start,
+                    'end' => $detailsOne->end,
+                    'status' => $status,
+
+                );
 
             }
 
-            if($dataStart != "9999-99-99"){
+            $hoursExpected = floor($somaDiffInMinExpected / 60);
+            $minutesExpected = $somaDiffInMinExpected % 60;            $hoursExpected = floor($somaDiffInMinExpected / 60);
+            $hoursFulfilled = floor($somaDiffInMinFulfilled / 60);
+            $minutesFulfilled = $somaDiffInMinFulfilled % 60;
+
+            $fullDetails[] = array(
+                'title' => $details->title,
+                'manager' => $details->Event[0]->manager,
+                'timeHoursExpected' => $hoursExpected,
+                'timeMinutesExpected' => $minutesExpected,
+                'timeHoursFulfilled' => $hoursFulfilled,
+                'timeMinutesFulfilled' => $minutesFulfilled,
+                'moreDetail' => $turma,
+            );
+
+        }
+
+//        return $fullDetails;
+
+        return view('group.viewRegistrationForm', ['fullDetails' => $fullDetails]);
+    }
+
+
+
+
+    public function listEvents()
+    {
+        //
+        $group = FastEvent::with('Event')->get();
+
+
+        foreach ($group as $value) {
+            unset($status);
+            $status = [];
+            $dataStart = Carbon::createFromFormat('Y-m-d H:i:s', '9999-01-01 00:00:01');
+            $dataEnd = Carbon::createFromFormat('Y-m-d H:i:s', '1000-01-01 00:00:01');
+
+            foreach ($value->Event as $agenda) {
+
+                $dataAgendaStart = Carbon::createFromFormat('Y-m-d H:i:s', $agenda->start);
+                $dataAgendaEnd = Carbon::createFromFormat('Y-m-d H:i:s', $agenda->end);
+
+
+                if ($dataStart->greaterThanOrEqualTo($dataAgendaStart)) {
+                    $dataStart = $dataAgendaStart;
+                }
+
+                if ($dataEnd->lessThanOrEqualTo($dataAgendaEnd)) {
+                    $dataEnd = $dataAgendaEnd;
+                }
+
+                if (isset($agenda->manager)) {
+                    $manager = $agenda->manager;
+                }
+                array_push($status, $agenda->status);
+
+            };
+
+
+            $dataStart = substr($dataStart, 0, 10);
+            $dataEnd = substr($dataEnd, 0, 10);
+
+
+            $statusAgendada = array_search(0, $status);
+            $statusRealizada = array_search(1, $status);
+            $statusCancelada = array_search(2, $status);
+
+            $statusResultado = 'Aberta';
+            if (
+                (!is_integer($statusAgendada) && !is_integer($statusCancelada))
+                ||
+                (!is_integer($statusAgendada) && !is_integer($statusRealizada))
+            ) {
+                $statusResultado = 'Fechada';
+            }
+
+
+
+            if ($dataStart != "9999-01-01") {
                 $viewTurmas[] = array(
+                    "id" => $value->id,
                     "name" => $value->title,
                     "dataStart" => $dataStart,
                     "dataEnd" => $dataEnd,
                     "manager" => $manager,
-                    "status" => 'Aberto ou fechado',
+                    "status" => $statusResultado,
                 );
             }
 
-
-
         }
 
-//       return  $viewTurmas;
 
+
+//        return $viewTurmas;
 
 
 //        return $group;
-        return view('group.group', ['viewTurmas'=> $viewTurmas]);
+        return view('group.group', ['viewTurmas' => $viewTurmas]);
     }
 
     public function loadEvents(Request $request)
@@ -161,6 +251,14 @@ class EventController extends Controller
             return response()->json(['negarend' => 'upd A DATA FINAL esta conflitando com outra data FINAL Ou INICIAL,
             Agendamento nao pode Começar ou Terminar na mesma Data/Hora']);
         }
+
+        $ManagerEvent = Event::where('id', $request->id)
+            ->where('manager', Auth::user()->name)
+            ->first();
+        if ($ManagerEvent == null) {
+            return response()->json(['negarend' => 'negou']);
+        }
+
 
         $event = Event::where('id', $request->id)->first();
         $event->fill($request->all());

@@ -2,12 +2,12 @@
 @section('content')
 
     <div class="container">
+
         @include('modais.events')
         @include('modais.fastEvents')
 
         <div id='external-events'>
             <h4>Eventos Rápidos</h4>
-
             <div id='external-events-list'>
 
                 @isset($fastEvents)
@@ -22,9 +22,7 @@
                         <p>Não há eventos rápidos a serem visualizados</p>
                     @endforelse
                 @endisset
-
             </div>
-
             <p>
                 {{--                <input type='checkbox' id='drop-remove'/>--}}
                 {{--                <label for='drop-remove'>remover após arrastar</label>--}}
@@ -33,7 +31,6 @@
                 </button>
             </p>
         </div>
-
 
         <div
             id='calendar'
@@ -46,9 +43,7 @@
             data-route-fast-event-update="{{ route('routeFastEventUpdate') }}"
             data-route-fast-event-store="{{ route('routeFastEventStore') }}">
         </div>
-
     </div>
-
 
     <script src='{{asset('assets/packages/core/main.js')}}'></script>
     <script src='{{asset('assets/packages/interaction/main.js')}}'></script>
@@ -58,12 +53,9 @@
     <script src='{{asset('assets/packages/core/locales-all.js')}}'></script>
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
 
     <script src="{{asset('assets/js/scripts.js')}}" type="text/javascript" ></script>

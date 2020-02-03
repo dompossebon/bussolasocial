@@ -28,7 +28,7 @@
                         @endauth
                     @endif
                 @else
-                <a class="p-2 text-dark" href="{{ route('viewcalendar') }}">Criar Turmas | Agendar</a>
+                <a class="p-2 text-dark" href="{{ route('viewCalendar') }}">Criar Turmas | Agendar</a>
 
 
                         <a class="p-2 text-dark" href="{{ route('logout') }}"
@@ -40,6 +40,7 @@
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                             @csrf
                         </form>
+                <a class="p-2 text-dark" href="{{ route('ruleSystem') }}">Regras do Sistema</a>
 
                 @endguest
 

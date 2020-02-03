@@ -16,7 +16,7 @@ class FastEventRequest extends FormRequest
     {
         return [
             'title' => 'required|min:3',
-            'start' => 'date_format:H:i:s|before:end',
+            'start' => 'date_format:H:i:s|before:end|after:00:00:00',
             'end' => 'date_format:H:i:s|after:start',
         ];
     }
@@ -28,8 +28,9 @@ class FastEventRequest extends FormRequest
             'title.min' => 'Título deve ter pelo menos 3 caracteres!',
             'start.date_format' => 'Preencha a Hora Inicial com valor Válido!',
             'start.before' => 'A Hora Inicial deve ser Menor que a Hora Final!',
+            'start.after' => 'A Hora Inicial deve ser Maior que 00:00:00!',
             'end.date_format' => 'Preencha a Hora Final com valor Válido!',
-            'end.after' => 'A Hora Final deve ser Maior que a Hora Inicial!',
+            'end.after' => 'A Hora Final deve ser Maior que a Hora Inicial',
         ];
     }
 }

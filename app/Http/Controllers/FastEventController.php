@@ -11,7 +11,7 @@ use Illuminate\Http\Request;
 class FastEventController extends Controller
 {
     //
-    public function viewcalendar()
+    public function viewCalendar()
     {
         //
         $fastEvents = FastEvent::all();

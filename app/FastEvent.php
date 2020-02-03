@@ -14,6 +14,6 @@ class FastEvent extends Model
 
     public function event()
     {
-        return $this->hasMany(Event::class, 'fast_events_id');
+        return $this->hasMany(Event::class, 'fast_events_id')->orderBy('start', 'Asc');
     }
 }

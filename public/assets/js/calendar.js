@@ -82,8 +82,6 @@ document.addEventListener('DOMContentLoaded', function() {
             $("#modalCalendar").modal('show');
             $("#modalCalendar #titleModal").text('Alterar Agenda/Status Turma');
             $("#modalCalendar button.deleteEvent").css("display","flex");
-            $("#modalCalendar label.classlabeltitle").css("display","none");
-            $("#modalCalendar input.classtitle").css("display","none");;
             $("#modalCalendar label.classlabelcolor").css("display","none");
             $("#modalCalendar input.classcolor").css("display","none");
 

@@ -1,21 +1,22 @@
 @extends('templates.master')
 
-
 @section('content')
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header">Visualiza Turma Existente</div>
+                    <div class="card-header">Visualiza Turma Agendadas</div>
                     <br/>
                     <p/>
 
                     @forelse ($viewTurmas as $viewTurma)
-
+                        <a class="p-2" href="{{ route( "viewRegistrationForm", $viewTurma['id'] ) }}">
                         Turma: <b>{{ $viewTurma['name'] }}  </b>  -
+                        </a>
                         Inicio: <b>{{ $viewTurma['dataStart'] }}  </b>  -
+                        Situação: <b>{{ $viewTurma['status'] }}  </b> -
                         Fim: <b>{{ $viewTurma['dataEnd'] }}  </b>  -
-                        Responsavel: <b>{{ $viewTurma['manager'] }}  </b> 
+                        Responsavel: <b>{{ $viewTurma['manager'] }}  </b>
 
 
 

@@ -21,6 +21,9 @@ $(function () {
         $("#modalFastEvent #titleModal").text("Criar Nova Turma");
         $("#modalFastEvent button.deleteFastEvent").css("display","none");
 
+        $("#modalFastEvent input[name='start']").val('00:00:01');
+        $("#modalFastEvent input[name='end']").val('01:00:01');
+
     })
 
     $(".novaEvent").click(function () {

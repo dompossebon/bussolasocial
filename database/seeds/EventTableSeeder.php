@@ -27,8 +27,8 @@ class EventTableSeeder extends Seeder
             [
                 'fast_events_id' => 1,
                 'title' => 'Abelhinha',
-                'start' => '2020-02-02',
-                'end' => '2020-02-03',
+                'start' => '2020-02-02 13:30:00',
+                'end' => '2020-02-03 14:30:00',
                 'color' => '#d8002b',
                 'description' => 'Falar com Alunos',
                 'status' => '0',
