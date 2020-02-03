@@ -22,7 +22,6 @@ Route::get('/rules-system', function () {
 /**
  * Rotas para Novas Agendas
  */
-Route::get('/fone', 'TelefoneController@getIndex')->name('fone');
 
 Route::get('/view-registration-form/{id}', 'EventController@viewRegistrationForm')->name('viewRegistrationForm');
 Route::get('/', 'EventController@listEvents');

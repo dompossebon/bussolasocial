@@ -2,22 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6826a33b-14df-45e2-a909-dc810cf01ddd" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/group/viewRegistrationForm.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/rulesbasic/ruleSystem.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/FastEvent.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/FastEvent.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/EventController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/EventController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/FastEventController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/FastEventController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/FastEventRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/FastEventRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/EventTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/EventTableSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/calendar.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/calendar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/scripts.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/scripts.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/group/calendar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/group/calendar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/group/group.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/group/group.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/modais/events.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/modais/events.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/templates/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/templates/header.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TelefoneController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Pessoa.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Telefone.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_01_29_155058_create_groups_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_02_01_185340_create_pessoas_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_02_01_185352_create_telefones_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/findex.blade.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Feature/ExampleTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Feature/ViewGroupTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/TestCase.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Unit/ExampleTest.php" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -188,7 +186,7 @@
       <workItem from="1580584529937" duration="9894000" />
       <workItem from="1580597102941" duration="10155000" />
       <workItem from="1580727981989" duration="24361000" />
-      <workItem from="1580752557504" duration="7719000" />
+      <workItem from="1580752557504" duration="12590000" />
     </task>
     <servers />
   </component>
