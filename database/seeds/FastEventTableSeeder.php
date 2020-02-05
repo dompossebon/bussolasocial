@@ -18,22 +18,23 @@ class FastEventTableSeeder extends Seeder
                 'title' => 'Abelhinha',
                 'start' => '11:30:00',
                 'end' => '13:00:00',
-                'color' => '#e8f516'
+                'color' => '#e8f516',
+                'manager' => 'Possebon',
             ],
             [
                 'title' => 'Lobinhos',
                 'start' => '18:30:00',
                 'end' => '20:00:00',
-                'color' => '#d8002b'
+                'color' => '#d8002b',
+                'manager' => 'Possebon'
             ],
             [
                 'title' => 'As Branquelas',
                 'start' => '10:30:00',
                 'end' => '11:00:00',
-                'color' => '#03ffea'
+                'color' => '#e50ae4',
+                'manager' => 'Tatiana'
             ],
-
-
         ]);
     }
 }

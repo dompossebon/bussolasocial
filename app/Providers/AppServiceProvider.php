@@ -15,7 +15,7 @@ class AppServiceProvider extends ServiceProvider
     public function register()
     {
         //
-        Schema::defaultStringLength(191);
+//        Schema::defaultStringLength(191);
     }
 
     /**
@@ -26,5 +26,8 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         //
+//        if (DB::connection() instanceof \Illuminate\Database\SQLiteConnection) {
+//            DB::statement(DB::raw('PRAGMA foreign_keys=1'));
+//        }
     }
 }

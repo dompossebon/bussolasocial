@@ -16,7 +16,9 @@ Auth::routes();
 Route::get('/rules-system', function () {
     return view('rulesbasic.ruleSystem');
 })->name('ruleSystem');
-
+Route::get('/', function () {
+    return view('rulesbasic.ruleSystem');
+});
 
 
 /**
@@ -24,21 +26,27 @@ Route::get('/rules-system', function () {
  */
 
 Route::get('/view-registration-form/{id}', 'EventController@viewRegistrationForm')->name('viewRegistrationForm');
-Route::get('/', 'EventController@listEvents');
 Route::post('/logout', 'EventController@logout')->name('logout');
-Route::get('/load-events',  'EventController@loadEvents')->name('routeLoadEvents');
+Route::get('/load-events', 'EventController@loadEvents')->name('routeLoadEvents');
 Route::get('/event-list', 'EventController@listEvents')->name('routeEventList');
-Route::post('/event-store', 'EventController@store')->name('routeEventStore');
-Route::put('/event-update', 'EventController@update')->name('routeEventUpdate');
-Route::delete('/event-destroy', 'EventController@destroy')->name('routeEventDelete');
+
+
 
 /**
  * Rotas para Novas Turmas
  */
-Route::get('/view-calendar', 'FastEventController@viewCalendar')->name('viewCalendar')->middleware('auth');
 Route::get('/home', 'FastEventController@viewCalendar')->name('home');
-Route::post('/fast-event-store', 'FastEventController@store')->name('routeFastEventStore');
-Route::put('/fast-event-update', 'FastEventController@update')->name('routeFastEventUpdate');
-Route::delete('/fast-event-destroy', 'FastEventController@destroy')->name('routeFastEventDelete');
 
+
+Route::prefix('admin')->middleware(['auth'])->group(function () {
+    Route::post('/event-store', 'EventController@store')->name('routeEventStore');
+    Route::put('/event-update', 'EventController@update')->name('routeEventUpdate');
+    Route::delete('/event-destroy', 'EventController@destroy')->name('routeEventDelete');
+
+
+    Route::get('/view-calendar', 'FastEventController@viewCalendar')->name('viewCalendar');
+    Route::post('/fast-event-store', 'FastEventController@store')->name('routeFastEventStore');
+    Route::put('/fast-event-update', 'FastEventController@update')->name('routeFastEventUpdate');
+    Route::delete('/fast-event-destroy', 'FastEventController@destroy')->name('routeFastEventDelete');
+});
 

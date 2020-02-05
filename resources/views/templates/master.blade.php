@@ -2,6 +2,7 @@
 <html lang="pt-br">
 <head>
 <meta charset="UTF-8">
+    <meta name="description" content="BussolaSocial">
 <title>Crud Turmas da Bússola</title>
 
     <meta name="csrf-token" content="{{ csrf_token() }}">

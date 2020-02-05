@@ -3,11 +3,13 @@
 @section('content')
     <div class="container">
         <div class="row justify-content-center">
-REGRAS BASICAS SOBRE UTILIZACAO DO SYSTEMA
-            <br /><br /><br />
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header">REGRAS BASICAS SOBRE UTILIZACAO DO SYSTEMA</div>
 
-            Regras<br />
-            <br /><br />
+
+
+
             Cada turma possui um nome de identificação (Ex: Turma Abelhinha, 1ª série, Curso de informática, etc.).
             <p />
             <p />
@@ -35,6 +37,10 @@ REGRAS BASICAS SOBRE UTILIZACAO DO SYSTEMA
             <p />
             Somente o responsável pela turma pode alterar Agendamento.
 
+
+                </div>
+            </div>
         </div>
     </div>
 @endsection
+
