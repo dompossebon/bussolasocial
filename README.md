@@ -61,8 +61,9 @@ após ter alterado e estiver testado a sua conexão execute o comando para criar
 
 - php artisan migrate:fresh --seed ///este comando vai popular o sistema para utilizar
 
-ja temos dois usuarios
+ja temos dois usuarios com a mesma senha
 login = dompossebon@gmail.com
+login = angela@gmail.com
 senha = 88888888
 
 ---------------------------------------------------------
