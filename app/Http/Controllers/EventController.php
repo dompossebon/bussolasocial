@@ -181,7 +181,7 @@ class EventController extends Controller
             ->where('manager', $this->verifiIfTestinf())
             ->first();
         if ($ManagerEvent == null) {
-            return false;
+            return response()->json(['negar' => 'Ação Negada, Apenas o Responśavel pode Alterar agenda']);
         }
 
         $data = new Event;

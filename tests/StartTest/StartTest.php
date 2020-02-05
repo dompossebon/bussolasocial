@@ -24,11 +24,11 @@ class StartTest extends TestCase
         ]);
 
         $this->assertDatabaseHas('fast_events', [
-            'title' => 'Abelhinha'
+            'title' => 'TurmaDoPossebon-I'
         ]);
 
         $this->assertDatabaseHas('events', [
-            'title' => 'Abelhinha'
+            'title' => 'TurmaDoPossebon-I'
         ]);
 
 
