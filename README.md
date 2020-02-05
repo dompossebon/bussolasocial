@@ -6,11 +6,11 @@ Bússola Social
 
 # Código Teste
 
-Sistema CRUD feito com Laravel, Html5, CSS, JavaScript
+Sistema CRUD feito com Laravel, Html5, CSS, JavaScript, JQuery.
 
 Ps: Melhor não rodar dentro de Xampp ou Lampp. basta seguir este arquivo.
 
-Funciona com servidor próprio do laravel(php artisan serve)
+Funciona com servidor próprio do laravel(php artisan serve).
 
 
 
@@ -44,7 +44,13 @@ Na raiz do projeto localize e Duplique o arquivo .env.example e em seguida renom
 
 cp .env.example .env
 
-Altere o Trecho de Código dentro do arquivo .env
+---------------------------------------------------------
+
+O Trecho de Código dentro do arquivo .env foi deixado para facilitar testes(não deve ficar aqui)
+Crie Dois banco de Dados
+1- para produção = dbBussolaSocial
+2- para testes = dbBussolaSocial_test
+IMPORTANTE --- verifique a senha para acesso ao banco = DB_PASSWORD=@@123456
 
 DB_DATABASE=dbBussolaSocial
 DB_USERNAME=root
@@ -53,7 +59,14 @@ DB_PASSWORD=@@123456
 Para que assim o sistema conecte-se ao seu banco e possa criar as devidas tabelas
 após ter alterado e estiver testado a sua conexão execute o comando para criar as tabelas
 
-- php artisan migrate
+- php artisan migrate:fresh --seed ///este comando vai popular o sistema para utilizar
+
+ja temos dois usuarios
+login = dompossebon@gmail.com
+senha = 88888888
+
+---------------------------------------------------------
+
 
 Então rode o comando:
 
@@ -66,30 +79,10 @@ e em seguida
 
 Agora basta
 
-visite http: // localhost: 8000 para ver o aplicativo em ação.
+visite http: // http://127.0.0.1:8000/ para ver o aplicativo em ação.
 
 
-
-FALTA DETALHES PARA INSTALAR O BANCO DE DADO E RODAR AS MIGRATES
-
-# EXTRAS para Explicar depois
-
-1. sudo chown -R $USER:www-data storage
-2. sudo chown -R $USER:www-data bootstrap/cache
-3. chmod -R 775 storage
-4. chmod -R 775 bootstrap/cache/
-
-
-Continua... Arquivo e Sistema Inacabado...
-
-
-
-
-
-
-
-
-
+---------------------------------------------------------
 
 
 ## Construído com
@@ -98,9 +91,6 @@ React - uma biblioteca JavaScript para criar interfaces de usuário
 
 ## by Possebon 
 ## Contato dompossebon@gmail.com
-
-
-:+1: # By Possebon
 
 :+1: ## By Possebon
 
