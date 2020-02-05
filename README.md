@@ -47,23 +47,33 @@ cp .env.example .env
 ---------------------------------------------------------
 
 O Trecho de Código dentro do arquivo .env foi deixado para facilitar testes(não deve ficar aqui)
+
 Crie Dois banco de Dados
+
 1- para produção = dbBussolaSocial
+
 2- para testes = dbBussolaSocial_test
+
 IMPORTANTE --- verifique a senha para acesso ao banco = DB_PASSWORD=@@123456
 
 DB_DATABASE=dbBussolaSocial
+
 DB_USERNAME=root
+
 DB_PASSWORD=@@123456
 
 Para que assim o sistema conecte-se ao seu banco e possa criar as devidas tabelas
+
 após ter alterado e estiver testado a sua conexão execute o comando para criar as tabelas
 
 - php artisan migrate:fresh --seed ///este comando vai popular o sistema para utilizar
 
 ja temos dois usuarios com a mesma senha
+
 login = dompossebon@gmail.com
+
 login = angela@gmail.com
+
 senha = 88888888
 
 ---------------------------------------------------------
