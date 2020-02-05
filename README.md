@@ -95,6 +95,14 @@ visite http: // http://127.0.0.1:8000/ para ver o aplicativo em ação.
 
 ---------------------------------------------------------
 
+Para Rodar Testes rode este comando
+
+
+## vendor/bin/phpunit
+
+
+---------------------------------------------------------
+
 
 ## Construído com
 Laravel - O framework PHP para artesãos da Web
