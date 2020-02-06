@@ -2,25 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6826a33b-14df-45e2-a909-dc810cf01ddd" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/tests/TestCase.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/Unit/ExampleTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env.testing" beforeDir="false" afterPath="$PROJECT_DIR$/.env.testing" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/EventController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/EventController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/FastEventController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/FastEventController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/factories/SaleFactory.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_01_29_220935_create_fast_events_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_01_29_220935_create_fast_events_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/EventTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/EventTableSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/FastEventTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/FastEventTableSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/phpunit.xml" beforeDir="false" afterPath="$PROJECT_DIR$/phpunit.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/rulesbasic/ruleSystem.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/rulesbasic/ruleSystem.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/templates/master.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/templates/master.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/CreatesApplication.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/CreatesApplication.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Unit/EventControllerTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Unit/EventControllerTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Unit/UserTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/group/group.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/group/group.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/group/viewRegistrationForm.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/group/viewRegistrationForm.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

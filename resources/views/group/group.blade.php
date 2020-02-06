@@ -1,16 +1,15 @@
 @extends('templates.master')
 
 @section('content')
-    <div class="container">
+    <div class="container-lg">
         <div class="row justify-content-center">
-            <div class="col-md-8">
                 <div class="card">
                     <div class="card-header">Visualiza Turma Agendadas</div>
                     <br/>
                     <p/>
 
                     @forelse ($viewTurmas as $viewTurma)
-                        <a class="p-2" href="{{ route( "viewRegistrationForm", $viewTurma['id'] ) }}">
+                       <a class="p-2" href="{{ route( "viewRegistrationForm", $viewTurma['id'] ) }}">
                         Turma: <b>{{ $viewTurma['name'] }}  </b>  -
                         </a>
                         Inicio: <b>{{ $viewTurma['dataStart'] }}  </b>  -
@@ -37,7 +36,6 @@
 
 
                 </div>
-            </div>
         </div>
     </div>
 @endsection
