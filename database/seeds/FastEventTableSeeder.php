@@ -22,19 +22,20 @@ class FastEventTableSeeder extends Seeder
                 'manager' => 'Possebon',
             ],
             [
+                'title' => 'TurmaDaAngela',
+                'start' => '10:30:00',
+                'end' => '11:00:00',
+                'color' => '#e50ae4',
+                'manager' => 'Angela'
+            ],
+            [
                 'title' => 'TurmaDoPossebon-II',
                 'start' => '18:30:00',
                 'end' => '20:00:00',
                 'color' => '#d8002b',
                 'manager' => 'Possebon'
             ],
-            [
-                'title' => 'TurmaDaAngela',
-                'start' => '10:30:00',
-                'end' => '11:00:00',
-                'color' => '#e50ae4',
-                'manager' => 'Tatiana'
-            ],
+
         ]);
     }
 }
